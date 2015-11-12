@@ -135,7 +135,7 @@ var data = [
     "country":"Belize",
     "biomimic":"robocoral",
     "zone":"2m",
-    "sub_zone":"lagoon",
+    "sub_zone":"Lagoon",
     "wave_exp":"N/A",
     "tide_height":"N/A"
   },
@@ -7656,7 +7656,13 @@ function initdata(){
     function initMarkers(L, map){
         $(document).ready(function() {
             $.each(data, function(){
-                L.marker([this.field_lat, this.field_lon]).addTo(map);
+                L.marker([this.field_lat, this.field_lon],
+                    {title: 'Hover Text',     // Add a title
+                     opacity: 0.5}).bindPopup("<b>Location: </b>" + 
+                     this.location + ", " + this.state_province + ", " + 
+                     this.country + 
+                     "<br><b>Logger Type: </b>" + this.biomimic +
+                     "<br><b>Logger ID: </b>" + this.microsite_id).addTo(map);
             })
         })
     }

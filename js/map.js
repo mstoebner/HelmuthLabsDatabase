@@ -23,11 +23,6 @@ function initmap() {
 
 
   initMarkers(L, map);
-
-
- var hopkins = L.marker([36.62193333, -121.9053167]).addTo(map);
- hopkins.on('click', hopkins.bindPopup("<b>Location</b><br>I am a popup.").openPopup());
-
 };
 
 
