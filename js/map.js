@@ -8,7 +8,7 @@ var plotlayers=[];
 function initmap() {
 	// set up the map
 	// initialize the map
-  var map = L.map('map').setView([37.7, -122.2], 2);
+  var map = L.map('map').setView([-8.407168, 26.015625], 2);
 
   // load a tile layer
 
@@ -23,6 +23,12 @@ function initmap() {
 
 
   initMarkers(L, map);
+
+  map.on('popupopen', function(centerMarker) {
+        var cM = map.project(centerMarker.popup._latlng);
+        cM.y -= centerMarker.popup._container.clientHeight-110
+        map.setView(map.unproject(cM), 5, {animate: true});
+    });
 };
 
 
