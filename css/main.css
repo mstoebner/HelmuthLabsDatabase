@@ -91,19 +91,14 @@ body.nav-expanded {
 }
 
 .main-menu li {
-  border-bottom: 1px solid #323949;
   margin-left: 20px;
   font-size: 18px;
   padding: 12px;
+  padding-bottom: 0px;
 }
 
 .main-menu li a {
   color: #6F7D8C;
-  text-decoration: none;
-}
-
-.main-menu li a:hover {
-  color: #FFFFFF;
   text-decoration: none;
 }
 

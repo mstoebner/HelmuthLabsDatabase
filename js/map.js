@@ -25,10 +25,20 @@ function initmap() {
   initMarkers(L, map);
 
   map.on('popupopen', function(centerMarker) {
+        $('body').addClass('nav-expanded');
         var cM = map.project(centerMarker.popup._latlng);
-        cM.y -= centerMarker.popup._container.clientHeight-110
-        map.setView(map.unproject(cM), 5, {animate: true});
-    });
+        console.log("myId = " + centerMarker.popup._source._myId);
+        populateAllFields(centerMarker.popup._source._myId);
+        cM.y -= centerMarker.popup._container.clientHeight-200;
+        cM.x -= centerMarker.popup._container.clientWidth-180;
+        map.panTo(map.unproject(cM), {animate: true});
+        });
+
+  map.on('popupclose', function(){
+    $('body').removeClass('nav-expanded');
+  });
 };
+
+
 
 

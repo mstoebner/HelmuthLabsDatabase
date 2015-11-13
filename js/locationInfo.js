@@ -7653,19 +7653,48 @@ function initdata(){
     });
     }
 
+    // Adds markers to map
     function initMarkers(L, map){
         $(document).ready(function() {
             $.each(data, function(){
-                L.marker([this.field_lat, this.field_lon],
+                var marker = L.marker([this.field_lat, this.field_lon],
                     {title: 'Hover Text',     // Add a title
                      opacity: 0.5}).bindPopup("<b>Location: </b>" + 
                      this.location + ", " + this.state_province + ", " + 
                      this.country + 
                      "<br><b>Logger Type: </b>" + this.biomimic +
                      "<br><b>Logger ID: </b>" + this.microsite_id).addTo(map);
+                marker._myId = this.microsite_id;
+
             })
         })
+    };
+
+    // Autofills one field
+    function populateField(selectedFiled, selected){
+        var field = document.getElementById(selectedFiled);
+        field.value = selected;
+        console.log(field.value);
     }
+
+    // Autofills the drop downs in the filter
+    function populateAllFields(markerID){
+        console.log(markerID)
+        $(document).ready(function() {
+            $.each(data, function(){
+                console.log(this.microsite_id === markerID);
+                if(this.microsite_id === markerID){
+                    populateField('logger-type', this.biomimic);
+                    populateField('country', this.country);
+                    populateField('state', this.state_province);
+                    populateField('site', this.site);
+                    populateField('wave', this.wave_exp);
+                    populateField('zone', this.zone);
+                    populateField('sub-zone', this.sub_zone);
+                }
+            })
+        })
+        }
 
 
 
