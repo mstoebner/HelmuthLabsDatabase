@@ -37,6 +37,7 @@ function initmap() {
   map.on('popupclose', function(){
     $('body').removeClass('nav-expanded');
     activateFields();
+    initdata();
   });
 };
 

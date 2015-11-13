@@ -28,11 +28,12 @@ button {
 
 #wrapper_map {
   	width: 100%;
-  	height:700px;
+  	height:100%;
 }
 
 .col-md-9 {
 	padding-left:0px;
+	height:100%;
 }
 
 li a #reset {
