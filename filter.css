@@ -34,3 +34,16 @@ button {
 .col-md-9 {
 	padding-left:0px;
 }
+
+li a #reset {
+	font-size:14px;
+	float:left;
+	text-decoration:underline;
+}
+
+.icon-bar{
+	display:block;
+	width:22px;
+	height:2px;
+	border-radius:1px;
+}

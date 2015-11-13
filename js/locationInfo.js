@@ -7691,10 +7691,30 @@ function initdata(){
                     populateField('wave', this.wave_exp);
                     populateField('zone', this.zone);
                     populateField('sub-zone', this.sub_zone);
+                    deactivateFields();
                 }
             })
         })
         }
 
+    function deactivateFields(){
+        document.getElementById('logger-type').disabled=true;
+        document.getElementById('country').disabled=true;
+        document.getElementById('state').disabled=true;
+        document.getElementById('site').disabled=true;
+        document.getElementById('wave').disabled=true;
+        document.getElementById('zone').disabled=true;
+        document.getElementById('sub-zone').disabled=true;
+    }
+
+    function activateFields(){
+        document.getElementById('logger-type').disabled=false;
+        document.getElementById('country').disabled=false;
+        document.getElementById('state').disabled=false;
+        document.getElementById('site').disabled=false;
+        document.getElementById('wave').disabled=false;
+        document.getElementById('zone').disabled=false;
+        document.getElementById('sub-zone').disabled=false;
+    }
 
 

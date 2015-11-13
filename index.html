@@ -25,9 +25,9 @@
   <div class="navbar navbar-inverse navbar-fixed-top">      
         
         <!--Include your brand here-->
-        <a class="navbar-brand" href="">Helmuth Lab Database</a>
-        <div class="navbar-header pull-right">
-          <a id="nav-expander" class="nav-expander fixed">FILTER</a>
+        <!-- <a class="navbar-brand" href="">Helmuth Lab Database</a> -->
+        <div class="navbar-header pull-right" style="border:black;">
+          <a id="nav-expander" class="nav-expander fixed" style="padding-left: 25px;">FILTER</a>
         </div>
     </div>
 
@@ -35,7 +35,9 @@
     <div class="sidebar">
     <nav class="">
         <ul class="list-unstyled main-menu">
-          <li class="text-right"><a href="#" id="nav-close">X</a></li>
+          <li class="text-right">
+            <a id="reset">Reset Filters</a>
+            <a href="#" id="nav-close">X</a></li>
           <div>
             <label for="logger-type">Logger Type:</label>
             <select class="form-control" id="logger-type">

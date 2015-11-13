@@ -27,15 +27,16 @@ function initmap() {
   map.on('popupopen', function(centerMarker) {
         $('body').addClass('nav-expanded');
         var cM = map.project(centerMarker.popup._latlng);
-        console.log("myId = " + centerMarker.popup._source._myId);
+        $("nav").scrollTop(0);
         populateAllFields(centerMarker.popup._source._myId);
-        cM.y -= centerMarker.popup._container.clientHeight-200;
+        cM.y -= centerMarker.popup._container.clientHeight-100;
         cM.x -= centerMarker.popup._container.clientWidth-180;
         map.panTo(map.unproject(cM), {animate: true});
         });
 
   map.on('popupclose', function(){
     $('body').removeClass('nav-expanded');
+    activateFields();
   });
 };
 
