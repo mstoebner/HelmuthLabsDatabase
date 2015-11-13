@@ -7679,10 +7679,8 @@ function initdata(){
 
     // Autofills the drop downs in the filter
     function populateAllFields(markerID){
-        console.log(markerID)
         $(document).ready(function() {
             $.each(data, function(){
-                console.log(this.microsite_id === markerID);
                 if(this.microsite_id === markerID){
                     populateField('logger-type', this.biomimic);
                     populateField('country', this.country);
@@ -7707,7 +7705,14 @@ function initdata(){
         document.getElementById('sub-zone').disabled=true;
     }
 
-    function activateFields(){
+    function activateAndResetFields(){
+        populateField('logger-type', 'N/A');
+        populateField('country', 'N/A');
+        populateField('state', 'N/A');
+        populateField('site', 'N/A');
+        populateField('wave', 'N/A');
+        populateField('zone', 'N/A');
+        populateField('sub-zone', 'N/A');
         document.getElementById('logger-type').disabled=false;
         document.getElementById('country').disabled=false;
         document.getElementById('state').disabled=false;
@@ -7716,5 +7721,7 @@ function initdata(){
         document.getElementById('zone').disabled=false;
         document.getElementById('sub-zone').disabled=false;
     }
+
+
 
 
